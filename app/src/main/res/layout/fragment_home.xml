@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity">
+
+        <androidx.coordinatorlayout.widget.CoordinatorLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.google.android.material.appbar.AppBarLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:elevation="0dp"
+                android:elevation="0dp"
+                android:background="@android:color/transparent">
+
+                <com.google.android.material.appbar.CollapsingToolbarLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@null"
+                    app:layout_scrollFlags="scroll">
+
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="16dp">
+
+                        <TextView
+                            android:id="@+id/textView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="16dp"
+                            android:alpha=".6"
+                            android:textSize="12sp"
+                            android:fontFamily="@font/open_sans_bold"
+                            android:text="Dashboard"
+                            android:textColor="@color/black"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <ImageButton
+                            android:id="@+id/imageButton_fragmentHome_bookmark"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="16dp"
+                            android:tint="@color/black"
+                            android:alpha=".87"
+                            android:background="@null"
+                            android:src="@drawable/ic_baseline_bookmark_24"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="@+id/textView" />
+
+                        <ImageView
+                            android:id="@+id/imageView_fragmentHome_header"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="32dp"
+                            android:src="@drawable/ic_not__instagram"
+                            app:layout_constraintStart_toStartOf="@+id/textView"
+                            app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+                        <androidx.appcompat.widget.SearchView
+                            android:id="@+id/searchView_fragmentHome"
+                            android:layout_width="0dp"
+                            android:layout_height="40dp"
+                            android:layout_marginTop="32dp"
+                            android:background="#EDEDED"
+                            android:iconifiedByDefault="false"
+                            android:queryHint="@string/search_view_hint"
+                            app:queryHint="@string/search_view_hint"
+                            app:defaultQueryHint="@string/search_view_hint"
+                            app:iconifiedByDefault="false"
+                            app:layout_constraintEnd_toEndOf="@+id/imageButton_fragmentHome_bookmark"
+                            app:layout_constraintStart_toStartOf="@+id/imageView_fragmentHome_header"
+                            app:layout_constraintTop_toBottomOf="@+id/imageView_fragmentHome_header"
+                            app:queryBackground="@android:color/transparent"/>
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:text="Results"
+                            android:layout_marginTop="24dp"
+                            android:fontFamily="@font/montserrat_bold"
+                            android:textColor="@color/black"
+                            android:alpha=".87"
+                            android:textSize="14sp"
+                            app:layout_constraintEnd_toEndOf="@+id/searchView_fragmentHome"
+                            app:layout_constraintStart_toStartOf="@+id/searchView_fragmentHome"
+                            app:layout_constraintTop_toBottomOf="@id/searchView_fragmentHome" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </com.google.android.material.appbar.CollapsingToolbarLayout>
+            </com.google.android.material.appbar.AppBarLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerView_fragmentHome_content"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginHorizontal="14dp"
+                android:overScrollMode="never"
+                android:orientation="vertical"
+                app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                app:spanCount="2"
+                app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior"/>
+
+        </androidx.coordinatorlayout.widget.CoordinatorLayout>
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+</layout>

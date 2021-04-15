@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout>
+
+    <data>
+        <variable
+            name="contentModel"
+            type="com.definitely.notinstagram.model.ContentModel" />
+    </data>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".view.details.DetailsFragment">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white">
+
+            <com.google.android.material.appbar.CollapsingToolbarLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_scrollFlags="scroll">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="24dp">
+
+                    <ImageButton
+                        android:id="@+id/imageButton_detailsFragment_back"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@null"
+                        android:src="@drawable/ic_baseline_chevron_left_24"/>
+
+                    <Space
+                        android:layout_width="0dp"
+                        android:layout_height="1dp"
+                        android:layout_weight="1"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Not Instagram"
+                        android:textColor="@color/black"
+                        android:alpha=".6"
+                        android:fontFamily="@font/montserrat_bold"
+                        android:textSize="12sp"/>
+
+                    <Space
+                        android:layout_width="0dp"
+                        android:layout_height="1dp"
+                        android:layout_weight="1"/>
+
+                </LinearLayout>
+            </com.google.android.material.appbar.CollapsingToolbarLayout>
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/textView_detailsFragment_artist"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="24dp"
+                    tools:text="John Green"
+                    android:fontFamily="@font/open_sans_bold"
+                    android:textColor="@color/black"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"/>
+
+                <ImageView
+                    android:id="@+id/imageView_detailsFragment_cover"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:scaleType="centerCrop"
+                    android:layout_marginTop="8dp"
+                    tools:src="@drawable/cover1"
+                    app:layout_constraintDimensionRatio="1.1"
+                    app:layout_constraintTop_toBottomOf="@id/textView_detailsFragment_artist"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"/>
+
+                <TextView
+                    android:id="@+id/textView_detailsFragment_price"
+                    tools:text="17.99"
+                    android:layout_margin="24dp"
+                    app:layout_constraintTop_toBottomOf="@id/imageView_detailsFragment_cover"
+                    app:layout_constraintStart_toStartOf="parent"
+                    style="@style/textView_priceTag" />
+
+                <TextView
+                    android:id="@+id/textView_detailsFragment_currency"
+                    tools:text="USD"
+                    android:layout_marginStart="4dp"
+                    style="@style/textView_priceTag"
+                    app:layout_constraintTop_toTopOf="@id/textView_detailsFragment_price"
+                    app:layout_constraintStart_toEndOf="@id/textView_detailsFragment_price"/>
+
+                <TextView
+                    android:id="@+id/textView_detailsFragment_trackName"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="24dp"
+                    android:layout_marginTop="24dp"
+                    android:fontFamily="@font/montserrat_bold"
+                    android:textColor="@color/black"
+                    android:alpha=".87"
+                    android:textSize="13sp"
+                    tools:text="The Fault in Our Stars (Unabridged)"
+                    app:layout_constraintTop_toBottomOf="@id/textView_detailsFragment_price"
+                    app:layout_constraintStart_toStartOf="@id/textView_detailsFragment_price"
+                    app:layout_constraintEnd_toEndOf="parent"/>
+
+
+                <TextView
+                    android:id="@+id/textView_detailsFragment_description"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:alpha=".6"
+                    android:fontFamily="@font/open_sans"
+                    android:textColor="@color/black"
+                    android:textSize="13sp"
+                    app:layout_constraintEnd_toEndOf="@id/textView_detailsFragment_trackName"
+                    app:layout_constraintStart_toStartOf="@id/textView_detailsFragment_trackName"
+                    app:layout_constraintTop_toBottomOf="@id/textView_detailsFragment_trackName"
+                    tools:text="From John Green, the #1 bestselling author of Turtles All the Way Down &quot;The greatest romance story of this decade.&quot; - Entertainment...." />
+
+                <TextView
+                    android:id="@+id/textView_detailsFragment_genre"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/montserrat_medium"
+                    tools:text="Kids &amp; Young Adults"
+                    android:textColor="#0063DB"
+                    android:layout_marginTop="8dp"
+                    app:layout_constraintTop_toBottomOf="@id/textView_detailsFragment_description"
+                    app:layout_constraintStart_toStartOf="@id/textView_detailsFragment_description"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </ScrollView>
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+</layout>
